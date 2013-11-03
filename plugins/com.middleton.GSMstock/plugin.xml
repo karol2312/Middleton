@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.middleton.GSMstock"
+    version="0.0.1">
+
+    <name>IMEI</name>
+    
+    <description>
+        Get device IMEI
+    </description>
+    
+    <author>karol2312@wp.pl</author>
+    
+    <license>Apache 2.0</license>
+    
+    <js-module src="www/imei.js" name="imei">
+        <clobbers target="imei" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        
+         <config-file target="AndroidManifest.xml" parent="/manifest">
+                <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+         </config-file>
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="IMEIplugin">
+                <param name="android-package" value="com.middleton.GSMstock.IMEIplugin" />
+            </feature>
+        </config-file>
+
+        
+        <!-- cordova plugin src files -->
+        <source-file src="src/android/IMEIplugin.java" target-dir="src/com/middleton/GSMstock" />
+        
+       
+         
+    </platform>
+</plugin>
