@@ -1,0 +1,50 @@
+BODY, HTML
+{
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 18px;
+}
+.btnBlue
+{
+	font-size: 26px;
+	color: #FFF; 
+}
+.blueUnderlineText 
+{   
+	color: #069afd; 
+	text-decoration: underline;
+} 
+.form_remind
+{
+	font-size: 20px;
+	color: #8d8d8d;
+} 
+label {
+    font: 20px "Segoe UI", Arial, sans-serif;
+}
+#remember
+{
+	font-size: 18px;
+}
+.navbar-brand
+{
+	font-size: 36px;
+	color: #FFF;
+}
+.blueStock
+{
+	color: #0099ff;
+}
+h3
+{
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 20px;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+#page_main p
+{
+	font-size: 16px;
+	color: #069afd;
+}
+

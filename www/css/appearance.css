@@ -1,0 +1,57 @@
+.bg
+{
+	background: url(../img/bg.jpg) repeat-x;
+	background-color: #faf9f8;
+}
+ 
+
+.form 
+{ 
+	 border: 1px #8d8d8d solid; 
+	 border-radius:5px;
+}
+.btnBlue, #buy_button 
+{ 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,153,255)), color-stop(100%,rgb(3,136,225))); 
+}
+
+#sell_button 
+{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(231,162,8)), color-stop(100%,rgb(249,175,11)));
+}
+.boxShadow
+{
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    0px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow:         0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.boxShadowRed
+{
+	-webkit-box-shadow: 0px 0px 15px -3px rgba(246,56,5,1);
+	-moz-box-shadow: 0px 0px 15px -3px rgba(246,56,5,1);
+	box-shadow: 0px 0px 15px -3px rgba(246,56,5,1);
+	border: 1px #f63805 solid;	
+}
+.borderDashedLeft
+{
+	border-bottom: 1px dashed #494949;
+	border-right: 1px dashed #494949;
+}
+.borderDashedMiddle
+{
+	border-bottom: 1px dashed #494949;
+}
+.borderDashedRight
+{
+	border-bottom: 1px dashed #494949;
+	border-left: 1px dashed #494949;
+}
+.container, .navbar-inverse
+{
+	background: -webkit-linear-gradient(top,  rgb(56,56,57) 0%,rgb(73,73,73) 100%);
+	background: linear-gradient(to bottom,  rgb(56,56,57) 0%,rgb(73,73,73) 100%); 
+}
+.favImg { background-image:url(../img/Favourite.png) }
+.msgImg { background-image:url(../img/message.png) }
+.optImg { background-image:url(../img/options.png)}
+.lgtImg { background-image:url(../img/logout.png) }

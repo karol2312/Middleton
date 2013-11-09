@@ -1,59 +1,258 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>GSMstock</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+        <title>Hello World</title>
         
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.3.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery/css/jquery.mobile-1.3.2.min.css"/>
+        <script type="text/javascript" src="js/gsmstock.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <link href="bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="js/bootstrap.min.js"></script>
+        <script type='text/javascript' src='js/knockout-3.0.0 .js'></script>
+        <link rel="stylesheet" type="text/css" href="css/appearance.css" />
+        <link rel="stylesheet" type="text/css" href="css/position.css" />
+        <link rel="stylesheet" type="text/css" href="css/font.css" />
         
-         <script type="text/javascript" charset="utf-8" src="cordova.js"/>
-       	 <link rel="stylesheet" type="text/css" href="jquery/css/jquery.mobile-1.3.2.min.css"/>
-		 <script type="text/javascript" charset="utf-8" src="jquery/jquery-1.9.1.min.js"/>
-		 <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.3.2.min.js"/>
-		  <script type="text/javascript" src="js/index.js"/>
-         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-		 <script type="text/javascript" src="js/gsmstock.js"/> 
+    
+    
+    
+    
     </head>
     <body>
         
-        <div data-role="page" id="main">
+        <!-- Login -->
+       
+        <section data-role="page" id="main">
+         <div class="bg"> 
+         
+            <div id="logo" >
+            	<img src="img/logo.png" />
+            </div>
             
-            <h3>GsmStock</h3>
-        
-			
-			<input type="text" id="user_login"/><br/>
-            <label>Hasło :</label><br/>
-            <input type="text" id="login_password"/><br/>
-            <input type="button" id="login" value="Zaloguj" title="Zaloguj"/>
-            <a href="#page_register" data-role="button">Zarejestruj</a><br/>
-            <a href="#page_remember" data-role="button" id="answer_button">Przypomij hasło</a><br/>
+            <div>
+                <input type="text" data-role="none" id="login_login" class="form form-control boxShadow" placeholder="Login" />
+                <input type="password" data-role="none"  id="login_password" class="form form-control boxShadow"  placeholder="Hasło" />
+            </div>
+            
+            <div class="checkbox" >
+       		  <input type = "checkbox" data-role="none" id = "chkRemember" value = "Zapamiętaj" />
+              <label for = "chkRemember" id="remember" data-role="none">Zapamiętaj</label>
+    		</div>
+           
+            <div class="btn1">
+            	<button type="button" id="login_button" data-role="none" class="btnBlue btn boxShadow">Zaloguj się</button>
+            </div>
+            
+            <div id="forgoten" class="blueUnderlineText"><a href="#page_remember" data-role="none" id="answer_button">Nie pamiętasz hasła?</a>
+            </div>
+            
+            <div id="register">
+             Nie masz jeszcze konta? 
+             <span class="blueUnderlineText" >
+               <a href="#page_register" data-role="none" >Zarejestruj się</a>
+             </span>
+            </div>
             
         
-        </div>
+         </div>
+        </section>
+          
+        <!-- Register -->
+        <section data-role="page" id="page_register"> 
+         <div class="bg">
+      
+		   <div class="logoSmall"><img src="img/logo.png" /></div>
+           <div class="formPosition">
+             <div class="iconRegister">
+          	   <img src="img/people.png"/>
+               <img src="img/line.png"/>
+    	     </div>
+             <input data-role="none" type="text" id="register_login" class="form form-control boxShadow" placeholder="Login" />
+          </div>
+          
+           <div class="formPosition">
+             <div class="iconRegister">
+          	   <img src="img/lock.png"/>
+               <img src="img/line.png"/>
+    	     </div>
+             <input data-role="none" type="password" id="register_password" class="form form-control boxShadow" placeholder="Hasło" />
+          </div>
+          
+          <input data-role="none" type="text" id="register_question" class="form form-control boxShadow" placeholder="Pytanie" />
+          <input data-role="none" type="text" id="register_answer" class="form form-control boxShadow" placeholder="Odpowiedz" />
+           
+          <div class="btn1">
+            <button data-role="none" type="button" id="register_button" class="btnBlue btn boxShadow">Zarejestruj</button>
+          </div>
+         </div>
+        </section>
         
-        <div data-role="page" id="page_register"> 
+        <!-- Remind -->
+        <section data-role="page" id="page_remember"> 
+         <div class="bg">
 
-            <h3>Rejestracja</h3><br/><br/>
-            Login : <input type="text" id="register_login"/><br/>
-            Hasło : <input type="text" id="register_password"/><br/>
-            Pytanie : <input type="text" id="register_question"/><br/>
-            Odpowiedż : <input type="text" id="register_answer"/><br/><br/><br/><br/>
-            <input type="button" id="register_button" value="Zarejestruj" title="Zarejestruj"/>
-
-        </div>
-        
-        <div data-role="page" id="page_remember"> 
-
-            <h3>Przypomnij hasło</h3><br/><br/><br/><br/>
+            <div class="logoSmall"><img src="img/logo.png" /></div>
             
-            Opowiedz na pytanie :<br/>
-            <label id="remember_question"></label><br/>
-            Opowiedż : <input type="text" id="remember_answer"/>
-            <input type="button" id="remember_button" value="Przypomnij hasło" title="Przypomnij haslo"/>
-        </div>
+          
+             <div class="form form_remind boxShadow">
+                 <label data-role="none" id="remember_login">Login</label>
+             </div>
+             
+             <div class="form form_remind boxShadow">
+                 <label data-role="none" id="remember_question">Pytanie</label>
+             </div>
+  
+            
+             <input data-role="none" type="text" id="remember_answer" class="form form-control boxShadow"/>
+             
+          <div class="btn1">
+            <button data-role="none" type="button" id="remember_button" class="btnBlue btn boxShadow" title="Przypomnij haslo">Przypomnij hasło</button>
+          </div>  
+         </div>
+        </section>
         
+         <!-- New Password -->
+        <section data-role="page" id="page_new_password"> 
+         <div class="bg">
+      
+          
+             <div class="formPosition">
+                 <div class="iconRegister">
+                     <img src="img/lock.png"/>
+                     <img src="img/line.png"/>
+                 </div>
+                 <input data-role="none" type="password" id="new_password" class="form form-control boxShadow" placeholder="Hasło" />
+             </div>
+             
+          <div class="formPosition">
+             <div class="iconRegister">
+          	   <img src="img/lock.png"/>
+               <img src="img/line.png"/>
+    	     </div>
+             <input data-role="none" type="password" id="password_remind" class="form form-control boxShadow" placeholder="Powtórz Hasło" />
+          </div>
+          
+         
+           
+             <div class="btn1">
+            <button data-role="none" type="button" id="new_password_button" class="btnBlue btn boxShadow">Zapisz</button>
+          </div>
+         </div>
+        </section>
+
+        <!-- Main Page -->
+        <section data-role="page" id="page_main"> 
+        
+            <div data-role="collapsible">
+                <h2>Nokia</h2>
+                <ul data-role="listview" data-split-icon="gear" data-split-theme="a">
+                    <li>
+                        <a href="index.html">
+                
+                            <h3>Test</h3>
+                          
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                
+                            <h3>Test</h3>
+                          
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                
+                            <h3>Test</h3>
+                          
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            
+            <div data-role="collapsible">
+                <h2>Samsung</h2>
+                <ul data-role="listview" data-split-icon="gear" data-split-theme="a">
+                    <li>
+                        <a href="index.html">
+                
+                            <h3>Test</h3>
+                          
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                
+                            <h3>Test</h3>
+                          
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                
+                            <h3>Test</h3>
+                          
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            
+       <div data-role="collapsible">
+        <h2>Htc</h2>
+        <ul data-role="listview" data-split-icon="gear" data-split-theme="a">
+            <li>
+                <a href="#page_main_transaction">
+                
+                          <h3>Test</h3>
+                          
+                </a>
+            </li>
+
+           <li>
+                <a href="index.html">
+                
+                          <h3>Test</h3>
+                          
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                
+                    <h3>Test</h3>
+                          
+                </a>
+
+            </li>
+
+        </ul>
+    </div>
+
+        </section>
+        
+        <section data-role="page" id="page_main_transaction">
+            
+        
+            <button data-role="none" type="button" id="buy_button" class="btnBlue btn boxShadow" title="Kup">Kup</button>
+            
+            <button data-role="none" type="button" id="sell_button" class="btnBlue btn boxShadow" title="Sprzedaj">Sprzedaj</button>
+          
+        </section>
+       
     </body>
 </html>
-

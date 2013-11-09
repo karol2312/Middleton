@@ -16,12 +16,12 @@ $(document).ready(function () {
 		
 		
 		if(imei == 'no_imei')
-			$("#user_login").show();
+			$("#login_login").show();
 		else
-			$("#user_login").hide();
+			$("#login_login").hide();
 	}
 	
-	
+	//user login
     $('#login').click(function () {
         $.ajax({
             type: "GET",
@@ -29,7 +29,7 @@ $(document).ready(function () {
             dataType: "jsonp",
             jsonpCallback: "handleResponse",
             data: {
-                'login': null,
+                'login': $("#login_login").val(),
                 'password': $('#login_password').val(),
                 'imei' : imei
             },
@@ -41,17 +41,18 @@ $(document).ready(function () {
 
                 loginBool=data.ReturnValue;
 
-                if(loginBool==true) {
-                    alert('Zalogowany');
+				if(loginBool==true) {
+                    $.mobile.navigate("#page_main", { transition: "slide", info: "info about the #bar hash" });
                 } else {
-					alert('Niezalogowany');
-				}
+                    $('#login_login').removeClass('boxShadow').addClass('boxShadowRed');
+                    $('#login_password').removeClass('boxShadow').addClass('boxShadowRed');
+                }
 				
             }
         });
     });
     
-    //zdarzenie klikniecia przycisku rejestracji
+  //zdarzenie klikniecia przycisku rejestracji
     $('#register_button').click(function () {
         $.ajax({
             type: "GET",
@@ -71,22 +72,28 @@ $(document).ready(function () {
             },
 
             success: function (data, status, xr) {
-
-                alert('Zarejestrowano pomyœlnie !');
+                $("#register_login").text("");
+                $("#register_password").text("");
+                $("#register_question").text("");
+                $("#register_answer").text("");
+                
+                $("#login_login").text($("#register_login").val());
+                $.mobile.navigate("#main", { transition: "slide", info: "info about the #bar hash" });
+                
             }
         });
     });
     
     //pobranie pytania do odzyskiwania has³a
-    $('#answer_button').click(function () {
+    $('#remember_button_login').click(function () {
         $.ajax({
             type: "GET",
             url: "http://46.254.72.71:8093/gsmstock/GsmStockService.svc/UserAnswerRequest",
             dataType: "jsonp",
             jsonpCallback: "handleResponse",
             data: {
-                'imei': imei,
-                'login' : null
+                'imei': null,
+                'login': $("#login_login").val()
             },
             error: function (textStatus) {
                 alert(textStatus);
@@ -107,8 +114,8 @@ $(document).ready(function () {
             dataType: "jsonp",
             jsonpCallback: "handleResponse",
             data: {
-                'imei': imei,
-                'login': null,
+                'imei': null,
+                'login': $("#login_login").val(),
                 'answer': $("#remember_answer").val()
             },
             error: function (textStatus) {
@@ -117,6 +124,35 @@ $(document).ready(function () {
 
             success: function (data, status, xr) {
                 $("#remember_question").text(data.ReturnValue);
+                
+                if(data.ReturnValue==true) {
+                    $.mobile.navigate("#page_new_password", { transition: "slide", info: "info about the #bar hash" });
+                } else {
+                    alert("zle");
+                }
+
+            }
+        });
+    });
+    
+    $('#answer_button').click(function () {
+        $("#remember_login").text($("#login_login").val());
+        
+        $.ajax({
+            type: "GET",
+            url: "http://46.254.72.71:8093/gsmstock/GsmStockService.svc/UserAnswerRequest",
+            dataType: "jsonp",
+            jsonpCallback: "handleResponse",
+            data: {
+                'imei': null,
+                'login': $("#login_login").val()
+            },
+            error: function (textStatus) {
+                alert(textStatus);
+            },
+
+            success: function (data, status, xr) {
+                $("#remember_question").text(data.UserAnswer[0].Question);
 
             }
         });

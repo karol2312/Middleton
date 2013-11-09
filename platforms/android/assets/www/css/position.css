@@ -1,0 +1,172 @@
+BODY, HTML
+{
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	min-width: 100%;
+}
+#main, #page_register, #page_remember, #page_main, .bg
+{
+	width: 100%; 
+	height: 100%; 
+}
+#logo  
+{ 
+	width: 240px; 
+	height: auto; 
+	margin: 0 auto;
+}
+#logo img
+{ 
+	width: 240px;
+	margin-top:40px;  
+}
+.form 
+{ 
+	width: 400px;
+	height: 50px;
+	margin: 20px auto;
+	margin-top: 30px;
+}
+.checkbox
+{
+	width: 400px;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.btn1
+{ 
+	width: 400px;
+	height: auto;
+	margin: 0 auto;
+}
+.btn2
+{
+	width: 440px;
+	height: 70px;
+	margin: 0 auto;	
+}
+.btnBlue
+{ 
+	width: 400px;
+	height: 50px;
+}
+#forgoten 
+{ 
+	width: 400px; 
+	height: 50px; 
+	margin: 0 auto;
+	margin-top: 30px;  
+} 
+#register
+{ 
+	width: 400px; 
+	height: 50px; 
+	margin: 0 auto; 
+	margin-top: 80px;  
+}
+
+
+
+
+.formPosition 
+{ 
+	position: relative; 
+	width: 400px; 
+	height: 50px;  
+	margin-top: 30px;  
+	margin: 20px auto; 
+}
+.iconRegister 
+{ 
+	width: 60px; 
+	height: 50px; 
+	position: absolute; 
+	top: 5px; 
+	left: 5px; 
+}
+.iconRegister img:first-child 
+{ 
+	width:40px;
+	margin-right: -3px;
+}
+#register_login, #register_password
+{
+	padding-left: 65px;
+}
+#register_button, #remember_button
+{
+	margin-top: 80px;
+}
+.logoSmall 
+{ 
+	width: 120px; 
+	height: auto; 
+	margin: 0 auto; 
+}
+.logoSmall img
+{ 
+	width: 120px; 
+	margin-top:40px; 
+}
+.form_remind
+{
+	padding: 9px;
+	padding-left: 15px;
+}
+.menu
+{
+   padding-left: 20px; 
+}
+.iconSearch
+{ 
+	width: 65px; 
+	height: 50px; 
+	position: absolute; 
+	top: 3px; 
+	right: 5px; 
+}
+.iconSearch img:last-child 
+{ 
+	width:45px;
+}
+.rowPadding
+{
+	padding: 20px;
+}
+#buy_button, #sell_button
+{
+	width: 180px;
+	height: 54px;
+}
+#buy_button
+{
+	margin-right: 20px;
+}
+.container
+{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.favImg, .msgImg, .optImg, .lgtImg
+{
+	width: 48px;
+	height: 48px;
+	
+}
+
+
+@media all and (max-width: 420px)
+{
+.formPosition { width: 85%; }
+.formPosition .form { width: 100%; }
+.form { width: 85%;}
+.checkbox { width: 85%; }
+.btn1 { width: 85%; }
+#buy_button, #sell_button { width: 45%; }
+.btnBlue { width: 100%; }
+#forgoten { width: 85%; }
+#register { width: 85%; }
+}
+
